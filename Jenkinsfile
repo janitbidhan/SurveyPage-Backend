@@ -23,6 +23,9 @@
 
 pipeline {
   agent any
+  environment {
+    DOCKER_REGISTRY = 'docker.io'
+  }
   stages {
     stage('Checkout') {
       steps {
@@ -32,7 +35,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'rm -rf *.war'
-        sh 'jar -cvf ROOT.war -C src/main/webapp .'
+        sh 'mvn clean package'
       }
       post {
         success {
@@ -40,16 +43,17 @@ pipeline {
         }
       }
     }
-    
     stage('Docker Build and Push') {
       steps {
         script {
-              docker.withRegistry('docker.io', 'docker-credentials') {
-                def customImage = docker.build("my-image:${env.BUILD_ID}")
-                customImage.push()
-              }
+          docker.withRegistry("${DOCKER_REGISTRY}", 'docker-credentials') {
+            def timestamp = new Date().format('yyyyMMddHHmmss')
+            def image = docker.build("bidhanjanit/swe-assignment2:${timestamp}", '.')
+            image.push()
+          }
         }
       }
     }
   }
 }
+
