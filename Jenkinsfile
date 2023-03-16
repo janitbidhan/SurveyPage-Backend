@@ -18,6 +18,13 @@ pipeline {
                 }
             }
         }
+        stage('Pushing the image to DockerHub') {
+            steps {
+                script {
+                    sh "docker push bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP}"
+                }
+            }
+        }
         stage('Restarting the deployment to pull the latest image') {
             steps {
                 sh 'kubectl rollout restart deploy cluster-a2 -n assn2'
