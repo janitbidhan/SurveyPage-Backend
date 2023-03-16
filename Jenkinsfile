@@ -26,6 +26,16 @@ pipeline {
   environment {
     DOCKER_REGISTRY = 'docker.io'
   }
+   stages {
+    stage('Example') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'my-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+          echo "Username: ${USERNAME}"
+          echo "Password: ${PASSWORD}"
+        }
+      }
+    }
+  }
   stages {
     stage('Checkout') {
       steps {
