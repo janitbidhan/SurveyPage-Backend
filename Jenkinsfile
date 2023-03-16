@@ -28,7 +28,7 @@ pipeline {
     DOCKER_CREDENTIALS = credentials("docker-credentials")
   }
   stages {
-    stage('Example') {
+    stage('Prerequisites') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           echo "Username: ${USERNAME}"
@@ -56,7 +56,7 @@ pipeline {
       steps {
         script {
           withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            sh 'echo ${PASSWORD} | docker login -u ${USERNAME} -p ${PASSWORD} --password-stdin'
+            sh 'echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin'
             def timestamp = new Date().format('yyyyMMddHHmmss')
             def image = docker.build("bidhanjanit/swe-assignment2:${timestamp}", '.')
             image.push()
