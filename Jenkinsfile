@@ -5,7 +5,7 @@ pipeline {
         DOCKER_CREDENTIAL = credentials('DOCKER_CREDENTIAL')
     }
     stages {
-        stage('Building the WAR file and docker image') {
+        stage('Stage 1: Building the WAR file and docker image') {
             steps {
                 script {
                     checkout scm
@@ -18,14 +18,14 @@ pipeline {
                 }
             }
         }
-        stage('Pushing the image to DockerHub') {
+        stage('Stage 2: Pushing the image to DockerHub') {
             steps {
                 script {
                     sh "docker push bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP}"
                 }
             }
         }
-        stage('Restarting the deployment to pull the latest image') {
+        stage('Stage 3: Restarting the deployment to pull the latest image') {
             steps {
                 sh 'kubectl rollout restart deploy cluster-a2 -n assn2'
             }
