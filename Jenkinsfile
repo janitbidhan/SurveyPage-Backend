@@ -23,11 +23,6 @@
 
 pipeline {
   agent any
-  environment {
-    DOCKER_REGISTRY = "docker.io"
-    DOCKER_USERNAME = "bidhanjanit"
-    DOCKER_PASSWORD = "dckr_pat__snbNu8AUrQA_pX-9FWkz7UYTCw"
-  }
   stages {
     stage('Checkout') {
       steps {
@@ -45,18 +40,13 @@ pipeline {
         }
       }
     }
+    
     stage('Docker Build and Push') {
       steps {
         script {
-          docker.withRegistry("${DOCKER_REGISTRY}", "docker-credentials") {
-            def image = docker.build("bidhanjanit/swe-assignment2:${BUILD_NUMBER}")
-            image.push()
-            sh 'docker tag bidhanjanit/swe-assignment2::${BUILD_NUMBER} ${DOCKER_REGISTRY}/bidhanjanit/swe-assignment2:${BUILD_NUMBER}'
-            withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-              sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${DOCKER_REGISTRY}"
-              sh "docker push ${DOCKER_REGISTRY}/bidhanjanit/swe-assignment2:${BUILD_NUMBER}"
-            }
-          }
+             withDockerRegistry([ credentialsId: "docker-credentials", url: "" ]) {
+             dockerImage.push()
+        }
         }
       }
     }
