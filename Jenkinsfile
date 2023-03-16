@@ -44,9 +44,10 @@ pipeline {
     stage('Docker Build and Push') {
       steps {
         script {
-             withDockerRegistry([ credentialsId: "docker-credentials", url: "" ]) {
-             dockerImage.push()
-        }
+              docker.withRegistry('docker.io', 'docker-credentials') {
+                def customImage = docker.build("my-image:${env.BUILD_ID}")
+                customImage.push()
+              }
         }
       }
     }
