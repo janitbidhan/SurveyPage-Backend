@@ -1,44 +1,39 @@
 pipeline {
     agent any 
     environment {
-        DOCKERHUB_PASS =  credentials{'dckr_pat_p-FpvhOE2NcXQqZlw4lnQKKnxgc'}
+        DOCKERHUB_PASS = credentials('dckr_pat_p-FpvhOE2NcXQqZlw4lnQKKnxgc')
     }
 
-    stages{ 
-        stage{"Building The Survey Page"} {
-            script {
-                chechkout scm
+    stages { 
+        stage('Building The Survey Page') {
+            steps {
+                checkout scm
                 sh 'rm -rf *.war'
                 sh 'jar -cvf ROOT.war -C src/main/webapp . '
-                sh 'echo ${BUILD_TIMESTAMP}'
+                sh "echo ${BUILD_TIMESTAMP}"
                 sh "docker login -u bidhanjanit -p ${DOCKERHUB_PASS}"
-                def customImage = docker.build{"bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP}"}
+                def customImage = docker.build("bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP}")
             }
         }
     
-
-        stage{"Pushing Image to Dockerhub"}{
-            steps{
-                script{
-                    sh 'docker push bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP}'
+        stage('Pushing Image to Dockerhub') {
+            steps {
+                script {
+                    sh "docker push bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP}"
                 }
             }
         }
 
-        stage{"Deploying to Rancher as a single pod"}{
-            steps{
-                    sh 'kubectl set image deployment/cluster-a2-assn2-deploy cluster-a2-assn2-deploy=bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP} -n jenkins-pipeline'
-                }
+        stage('Deploying to Rancher as a single pod') {
+            steps {
+                sh "kubectl set image deployment/cluster-a2-assn2-deploy cluster-a2-assn2-deploy=bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP} -n jenkins-pipeline"
+            }
         }
         
-
-        stage{"Deploying to Rancher as a loadbalancer"}{
-            steps{
-                    sh 'kubectl set image deployment/cluster-a2-assn2-deploy-loadbalancer cluster-a2-assn2-deploy-loadbalancer=bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP} -n jenkins-pipeline'
-                }
+        stage('Deploying to Rancher as a loadbalancer') {
+            steps {
+                sh "kubectl set image deployment/cluster-a2-assn2-deploy-loadbalancer cluster-a2-assn2-deploy-loadbalancer=bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP} -n jenkins-pipeline"
+            }
         }   
-
-        
     }
-
 }
