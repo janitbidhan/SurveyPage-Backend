@@ -35,7 +35,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'rm -rf *.war'
-        sh 'mvn clean package'
+        sh 'jar -cvf ROOT.war -C src/main/webapp .'
       }
       post {
         success {
