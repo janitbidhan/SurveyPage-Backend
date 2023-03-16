@@ -55,12 +55,11 @@ pipeline {
     stage('Docker Build and Push') {
       steps {
         script {
-          def docker = dockerRegistry.credentials(DOCKER_REGISTRY)
-          docker.withRegistry(DOCKER_REGISTRY, DOCKER_CREDENTIALS) {
-            def timestamp = new Date().format('yyyyMMddHHmmss')
-            def image = docker.build("bidhanjanit/swe-assignment2:${timestamp}", '.')
-            image.push()
-          }
+          sh 'docker login -u bidhanjanit -p ${DOCKER_CREDENTIAL}
+          def timestamp = new Date().format('yyyyMMddHHmmss')
+          sh 'echo $docker-credentials_PSW | docker login -u Sdocker-credentials_USR --password-stdin'
+          def image = docker.build("bidhanjanit/swe-assignment2:${timestamp}", '.')
+          image.push()
         }
       }
     }
