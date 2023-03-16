@@ -1,7 +1,8 @@
+//dckr_pat_p-FpvhOE2NcXQqZlw4lnQKKnxgc
 pipeline {
     agent any
     environment {
-        DOCKER_CREDENTIAL = credentials('dckr_pat_p-FpvhOE2NcXQqZlw4lnQKKnxgc')
+        DOCKER_CREDENTIAL = credentials('DOCKER_CREDENTIAL')
     }
     stages {
         stage('Building the WAR file and docker image') {
