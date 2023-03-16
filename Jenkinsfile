@@ -61,7 +61,7 @@ pipeline {
         script {
           withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh 'echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin'
-            def timestamp = new Date().format('yyyyMMddHHmmss')
+            def timestamp = new Date().format('yyyyMM')
             def image = docker.build("bidhanjanit/swe-assignment2:${timestamp}", '.')
             image.push()
           }
