@@ -11,7 +11,7 @@ pipeline {
                     sh 'rm -rf *.war'
                     sh 'jar -cvf ROOT.war -C src/main/webapp . '
                     sh 'echo ${BUILD_TIMESTAMP}'
-                    sh 'docker login -u bidhanjanit -p ${DOCKERHUB_PASS}'
+                    sh 'docker login -u bidhanjanit -p ${DOCKER_CREDENTIAL}'
                     def customImage = docker.build("bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP}")
                 }
             }
