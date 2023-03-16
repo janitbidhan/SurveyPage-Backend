@@ -1,0 +1,390 @@
+<!--
+Name: Janit Bidhan
+G Number: G01326011
+Email: jbidhan@gmu.edu
+This page is for the survey form and is to be deployed in EC2 machine.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>STUDENT SURVEY</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/form-icon.jpg" rel="icon">
+    <link href="assets/img/form-icon.jpg" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!--  CSS Files -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"
+          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.4/swiper-bundle.css" rel="stylesheet">
+
+    <!--  Main CSS File -->
+    <link href="assets/css/styleSurvey.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <h1>SWE-645</h1>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Survey Page</a></li>
+                <li><a class="nav-link scrollto" href="http://janitbidhan-swe645.com.s3-website-us-east-1.amazonaws.com/">Janit Bidhan Home Page</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <div class="carousel-container" style="height:25vh;">
+                <h2 class="animate__animated animate__fadeInDown"><em
+                        style="color:white; text-shadow: 10px 6px 5px black;">STUDENT SURVEY PAGE</em></h2>
+            </div>
+        </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+            <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+        </defs>
+        <g class="wave1">
+            <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+        </g>
+        <g class="wave2">
+            <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+        </g>
+        <g class="wave3">
+            <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+        </g>
+    </svg>
+
+</section><!-- End Hero -->
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title" data-aos="zoom-out">
+                <h2>STUDENT SURVEY FORM</h2>
+                <p>Welcome to Survey</p>
+            </div>
+            <p>Kindly share your thoughts and opinions regarding your recent campus visit.</p>
+
+            <div class="row content form-box">
+                <form id="studentForm" autocomplete="on">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="streetAddress">Street Address *</label>
+                        <input type="text" class="form-control" id="streetAddress" placeholder="Enter Street Address"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" class="form-control" id="city" placeholder="Enter City" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State *</label>
+                        <input type="text" class="form-control" id="state" placeholder="Enter State" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">Zip *</label>
+                        <input type="text" class="form-control" id="zip" placeholder="Enter Zip" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephoneNumber">Telephone Number *</label>
+                        <input type="text" class="form-control" id="telephoneNumber"
+                               placeholder="Enter Telephone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@gmu.edu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfSurvey">Date of Survey *</label>
+                        <input type="date" class="form-control" id="dateOfSurvey" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="likedMost">What did you like most about the campus?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="students" name="likedMost"
+                                   value="students">
+                            <label class="form-check-label" for="students">Students</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="location" name="likedMost"
+                                   value="location">
+                            <label class="form-check-label" for="location">Location</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="campus" name="likedMost" value="campus">
+                            <label class="form-check-label" for="campus">Campus</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="atmosphere" name="likedMost"
+                                   value="atmosphere">
+                            <label class="form-check-label" for="atmosphere">Atmosphere</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="dormRooms" name="likedMost"
+                                   value="dormRooms">
+                            <label class="form-check-label" for="dormRooms">Dorm Rooms</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="sports" name="likedMost" value="sports">
+                            <label class="form-check-label" for="sports">Sports</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="source">How did you become interested in our university?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="source" id="friends" value="friends">
+                            <label class="form-check-label" for="friends">Friends</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="source" id="television"
+                                   value="television">
+                            <label class="form-check-label" for="television">Television</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="source" id="internet" value="internet">
+                            <label class="form-check-label" for="internet">Internet</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="source" id="others" value="others">
+                            <label class="form-check-label" for="others">Others</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="recommendation">Would you recommend our university to others?</label>
+                        <select class="form-control" id="recommendation" name="recommendation">
+                            <option>Very Likely</option>
+                            <option>Likely</option>
+                            <option>Unlikely</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="raffle">Raffle</label>
+                        <input type="text" class="form-control" id="raffle" name="raffle"
+                               placeholder="Enter at least ten comma separated numbers (1-100)">
+                        <div class="error" id="raffleError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Additional Comments</label>
+                        <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+                <div id="thankYouMessage" style="display: none;">
+                    <h2>Thank you for submitting the form!</h2>
+                    <img src="assets/img/imgThankYou.jpeg" alt="Thank you image." style="width: 95%;
+    height: 90%;
+    border: 5px double black;"/>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End About Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <p class="credits">
+    <h3>Student Survey Page</h3>
+    <div>SWE 645 Assignment-1</div>
+    <div>
+        Component-based Software Development
+    </div>
+    </p>
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>George Mason University</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            For SWE 645 and Design Inspired from BootstrapMade.
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- External JS Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.4/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+<!-- Javascript code for various parts-->
+<script>
+    /**
+     * Setting default value on the form reload.
+     */
+    document.querySelector("input[id='firstName']").focus();
+    dateOfSurvey.value = new Date().toJSON().split('T')[0]
+
+    document.querySelector('form').addEventListener('cancel', function (event) {
+        event.preventDefault();
+        document.querySelector("input[id='firstName']").focus();
+        dateOfSurvey.value = new Date().toJSON().split('T')[0]
+    });
+    /**
+     * Toggle .header-scrolled class to #header when page is scrolled
+     */
+    /**
+     * Easy selector helper function
+     */
+    const select = (el, all = false) => {
+        el = el.trim()
+        if (all) {
+            return [...document.querySelectorAll(el)]
+        } else {
+            return document.querySelector(el)
+        }
+    }
+    /**
+     * Easy on scroll event listener
+     */
+    const onscroll = (el, listener) => {
+        el.addEventListener('scroll', listener)
+    }
+``
+    /**
+     * header scroll animation and nav showup.
+     */
+    let selectHeader = select('#header')
+    if (selectHeader) {
+        const headerScrolled = () => {
+            if (window.scrollY > 20) {
+                selectHeader.classList.add('header-scrolled')
+            } else {
+                selectHeader.classList.remove('header-scrolled')
+            }
+        }
+        window.addEventListener('load', headerScrolled)
+        onscroll(document, headerScrolled)
+    }
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        let raffle = document.querySelector("#raffle").value;
+        //Adding logic for raffle validation.
+        let flag = true;
+        let errorMessage = document.querySelector("#raffleError");
+        errorMessage.innerHTML = "";
+
+        if (flag && raffle == "") {
+            errorMessage.innerHTML = "Please enter 10 separated by, and must be between 1 and 100.";
+            document.querySelector('#raffleError').style.display = 'block';
+            flag = false;
+        }
+        // Check values are at least 10.
+        let raffleArray = raffle.split(",");
+        if (flag && raffleArray.length < 10) {
+            errorMessage.innerHTML += "Please enter at least ten numbers.";
+            document.querySelector('#raffleError').style.display = 'block';
+            flag = false;
+        }
+        // Check values are between 1 and 100.
+        if (flag) {
+            for (let i = 0; i < raffleArray.length; i++) {
+                if (isNaN(raffleArray[i]) || raffleArray[i] < 1 || raffleArray[i] > 100) {
+                    errorMessage.innerHTML = "Numbers must be between 1 and 100.";
+                    document.querySelector('#raffleError').style.display = 'block';
+                    flag = false;
+                }
+            }
+        }
+        if (flag) {
+            document.querySelector('#studentForm').style.display = 'none';
+            document.querySelector('#thankYouMessage').style.display = 'block';
+            errorMessage.textContent = "";
+        }
+
+    });
+    /**
+     * Easy event listener function
+     */
+    const on = (type, el, listener, all = false) => {
+        let selectEl = select(el, all)
+        if (selectEl) {
+            if (all) {
+                selectEl.forEach(e => e.addEventListener(type, listener))
+            } else {
+                selectEl.addEventListener(type, listener)
+            }
+        }
+    }
+
+    /**
+     * Mobile nav toggle
+     */
+    on('click', '.mobile-nav-toggle', function(e) {
+        select('#navbar').classList.toggle('navbar-mobile')
+        this.classList.toggle('bi-list')
+        this.classList.toggle('bi-x')
+    })
+
+    /**
+     * Mobile nav dropdowns activate
+     */
+    on('click', '.navbar .dropdown > a', function(e) {
+        if (select('#navbar').classList.contains('navbar-mobile')) {
+            e.preventDefault()
+            this.nextElementSibling.classList.toggle('dropdown-active')
+        }
+    }, true)
+
+
+</script>
+
+</body>
+
+</html>
