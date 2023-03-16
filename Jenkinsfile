@@ -26,6 +26,10 @@ pipeline {
   environment {
     DOCKER_REGISTRY = 'docker.io'
     DOCKER_CREDENTIALS = credentials("docker-credentials")
+    KUBERNETES_NAMESPACE = 'default'
+    KUBERNETES_DEPLOYMENT_NAME = 'myapp'
+    KUBERNETES_CONTAINER_NAME = 'myapp'
+    KUBERNETES_CONTAINER_PORT = 8080
   }
   stages {
     stage('Prerequisites') {
@@ -64,7 +68,23 @@ pipeline {
         }
       }
     }
+   stage('Deploy to Kubernetes') {
+      steps {
+        script {
+          withKubeConfig([credentialsId: 'kubeconfig']) {
+            sh 'kubectl set image deployment/${KUBERNETES_DEPLOYMENT_NAME} ${KUBERNETES_CONTAINER_NAME}=${DOCKER_REGISTRY}/myapp:${timestamp} -n ${KUBERNETES_NAMESPACE}'
+          }
+        }
+      }
+    }
   }
 }
+
+
+
+
+
+
+
 
 
