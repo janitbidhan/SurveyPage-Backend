@@ -26,8 +26,8 @@ pipeline {
   environment {
     DOCKER_REGISTRY = 'docker.io'
   }
-   stages {
-    stage('Example') {
+  stages {
+     stage('Example') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'my-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           echo "Username: ${USERNAME}"
@@ -35,8 +35,6 @@ pipeline {
         }
       }
     }
-  }
-  stages {
     stage('Checkout') {
       steps {
         checkout scm
