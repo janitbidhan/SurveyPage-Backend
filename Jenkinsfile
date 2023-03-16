@@ -25,8 +25,8 @@ pipeline {
   agent any
   environment {
     DOCKER_REGISTRY = "docker.io"
-    DOCKER_USERNAME = credentials('docker-username')
-    DOCKER_PASSWORD = credentials('docker-password')
+    DOCKER_USERNAME = "bidhanjanit"
+    DOCKER_PASSWORD = "dckr_pat__snbNu8AUrQA_pX-9FWkz7UYTCw"
   }
   stages {
     stage('Checkout') {
