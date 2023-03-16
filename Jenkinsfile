@@ -25,10 +25,10 @@ pipeline {
                 }
             }
         }
-        stage('Stage 3: Restarting the deployment to pull the latest image') {
-            steps {
-                sh 'kubectl rollout restart deploy cluster-a2 -n assn2'
-            }
-        }
+//         stage('Stage 3: Restarting the deployment to pull the latest image') {
+//             steps {
+//                 sh 'kubectl rollout restart deploy cluster-a2 -n assn2'
+//             }
+//         }
     }
 }
