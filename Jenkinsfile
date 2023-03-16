@@ -29,7 +29,7 @@ pipeline {
   stages {
      stage('Example') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'my-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           echo "Username: ${USERNAME}"
           echo "Password: ${PASSWORD}"
         }
