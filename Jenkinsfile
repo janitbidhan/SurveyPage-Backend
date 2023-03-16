@@ -46,7 +46,7 @@ pipeline {
     stage('Docker Build and Push') {
       steps {
         script {
-          docker.withRegistry("${DOCKER_REGISTRY}", 'docker-credentials') {
+          docker.withRegistry('docker.io', 'docker-credentials'){
             def timestamp = new Date().format('yyyyMMddHHmmss')
             def image = docker.build("bidhanjanit/swe-assignment2:${timestamp}", '.')
             image.push()
