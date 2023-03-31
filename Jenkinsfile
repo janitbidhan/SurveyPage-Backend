@@ -48,7 +48,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    withKubeconfig(
+                    withKubeConfig(
                             credentialsId: 'gke-creds',
                             clusterName: 'surveycluster',
                             zone: 'us-central1-c',
