@@ -56,7 +56,7 @@ pipeline {
                     ) {
                         def timestamp = new Date().format('yyyyMM')
                         //sh "kubectl set image deployment/${KUBERNETES_DEPLOYMENT_NAME} ${KUBERNETES_CONTAINER_NAME}=${DOCKER_REGISTRY}/bidhanjanit/swe-assignment2:${timestamp} -n ${KUBERNETES_NAMESPACE}"
-                        sh "kubectl rollout restart deploy ${KUBERNETES_DEPLOYMENT_NAME} -n ${KUBERNETES_NAMESPACE} -v=9"
+                        sh "kubectl rollout restart deploy ${KUBERNETES_DEPLOYMENT_NAME} -n ${KUBERNETES_NAMESPACE} --v=9"
                     }
                 }
             }
