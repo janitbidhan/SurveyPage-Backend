@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     withGKEKubeconfig(
-                            credentialsId: 'gke-plugin-creds',
+                            credentialsId: 'gke-creds',
                             clusterName: 'surveycluster',
                             zone: 'us-central1-c',
                             project: 'swe-645-assignment2'
