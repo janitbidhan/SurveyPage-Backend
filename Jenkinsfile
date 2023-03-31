@@ -1,34 +1,11 @@
-// //dckr_pat__snbNu8AUrQA_pX-9FWkz7UYTCw
-// pipeline {
-//     agent any
-//     environment {
-//         DOCKER_CREDENTIAL = credentials('DOCKER_CREDENTIAL')
-//     }
-//     stages {
-//         stage('Stage 1: Building the WAR file and docker image') {
-//             steps {
-//                 script {
-//                     checkout scm
-//                     sh 'rm -rf *.war'
-//                     sh 'jar -cvf ROOT.war -C src/main/webapp . '
-//                     sh 'echo ${BUILD_TIMESTAMP}'
-//                     sh 'docker login -u bidhanjanit -p ${DOCKER_CREDENTIAL}'
-//                     def customImage = docker.build("bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP}")
-//                     sh "docker push bidhanjanit/swe-assignment2:${BUILD_TIMESTAMP}"
-//                 }
-//             }
-//         }
-//     }
-// }
-
 pipeline {
   agent any
   environment {
     DOCKER_REGISTRY = 'docker.io'
     DOCKER_CREDENTIALS = credentials("docker-credentials")
-    KUBERNETES_NAMESPACE = 'default'
-    KUBERNETES_DEPLOYMENT_NAME = 'myapp'
-    KUBERNETES_CONTAINER_NAME = 'myapp'
+    KUBERNETES_NAMESPACE = 'namespace-survey-a2'
+    KUBERNETES_DEPLOYMENT_NAME = 'deployment-survey'
+    KUBERNETES_CONTAINER_NAME = 'container-survey'
     KUBERNETES_CONTAINER_PORT = 8080
   }
   stages {
@@ -71,20 +48,16 @@ pipeline {
    stage('Deploy to Kubernetes') {
       steps {
         script {
-          withKubeConfig([credentialsId: 'kubeconfig']) {
-            sh 'kubectl set image deployment/${KUBERNETES_DEPLOYMENT_NAME} ${KUBERNETES_CONTAINER_NAME}=${DOCKER_REGISTRY}/myapp:${timestamp} -n ${KUBERNETES_NAMESPACE}'
+          withGKEKubeconfig(
+            credentialsId: 'gke-plugin-creds',
+            clusterName: 'surveycluster,
+            zone: 'us-central1-c',
+            project: 'swe-645-assignment2'
+          ) {
+            sh "kubectl set image deployment/${KUBERNETES_DEPLOYMENT_NAME} ${KUBERNETES_CONTAINER_NAME}=${DOCKER_REGISTRY}/bidhanjanit/swe-assignment2:${timestamp} -n ${KUBERNETES_NAMESPACE}"
           }
         }
       }
     }
   }
 }
-
-
-
-
-
-
-
-
-
