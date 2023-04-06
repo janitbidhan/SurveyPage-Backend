@@ -7,9 +7,9 @@ pipeline {
     environment {
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_CREDENTIALS = credentials("docker-credentials")
-        KUBERNETES_NAMESPACE = 'namespace-survey-a2'
-        KUBERNETES_DEPLOYMENT_NAME = 'deployment-survey'
-        KUBERNETES_CONTAINER_NAME = 'container-survey'
+        KUBERNETES_NAMESPACE = 'swe-a2'
+        KUBERNETES_DEPLOYMENT_NAME = 'deploy-a2'
+        KUBERNETES_CONTAINER_NAME = 'container-0'
         KUBERNETES_CONTAINER_PORT = 8080
     }
     stages {
@@ -56,13 +56,13 @@ pipeline {
                 script {
                     withKubeConfig(
                             credentialsId: 'gke-creds',
-                            clusterName: 'surveycluster',
+                            clusterName: 'cluster-swe',
                             zone: 'us-central1-c',
                             project: 'swe-645-assignment2'
                     ) {
-                        def timestamp = new Date().format('yyyyMM')
-                        sh "kubectl set image deployment/${KUBERNETES_DEPLOYMENT_NAME} ${KUBERNETES_CONTAINER_NAME}=${DOCKER_REGISTRY}/bidhanjanit/swe-assignment2:${timestamp} -n ${KUBERNETES_NAMESPACE} --v=9"
-                        //sh "kubectl rollout restart deploy ${KUBERNETES_DEPLOYMENT_NAME} -n ${KUBERNETES_NAMESPACE} --v=9"
+//                         def timestamp = new Date().format('yyyyMM')
+//                         sh "kubectl set image deployment/${KUBERNETES_DEPLOYMENT_NAME} ${KUBERNETES_CONTAINER_NAME}=${DOCKER_REGISTRY}/bidhanjanit/swe-assignment2:${timestamp} -n ${KUBERNETES_NAMESPACE} --v=9"
+                        sh "kubectl rollout restart deploy ${KUBERNETES_DEPLOYMENT_NAME} -n ${KUBERNETES_NAMESPACE} --v=9"
                     }
                 }
             }
