@@ -2,15 +2,15 @@
 
 This pipeline deploys an application using Jenkins, Docker, and Kubernetes. It follows these stages:
 
-*Prerequisites*: This stage sets up the necessary credentials and environment variables needed for the deployment.
+__Prerequisites__: This stage sets up the necessary credentials and environment variables needed for the deployment.
 
-*Checkout*: This stage checks out the source code from the SCM.
+__Checkout__: This stage checks out the source code from the SCM.
 
-*Build*: This stage builds the application and archives the generated artifacts.
+__Build__: This stage builds the application and archives the generated artifacts.
 
-*Docker Build and Push*: This stage builds a Docker image of the application and pushes it to a Docker registry.
+__Docker Build and Push__: This stage builds a Docker image of the application and pushes it to a Docker registry.
 
-*Deploy to Kubernetes*: This stage deploys the application to a Kubernetes cluster by restarting the deployment.
+__Deploy to Kubernetes__: This stage deploys the application to a Kubernetes cluster by restarting the deployment.
 
 The pipeline uses the following environment variables:
 
