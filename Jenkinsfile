@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent  {
+    node {
+        label 'Swe645-jenkins'
+    }
+}
     environment {
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_CREDENTIALS = credentials("docker-credentials")
