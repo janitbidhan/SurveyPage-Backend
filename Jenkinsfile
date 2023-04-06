@@ -51,31 +51,12 @@ pipeline {
         }
       }
     }
-    stage('Deploy to Rancher') {
+    stage('Deploy to Kubernetes') {
       steps {
         script {
-            sh 'curl -sfL https://get.rancher.io | sudo sh -'
-            sh 'sudo rancher login https://18.209.26.76/ -t Rancher@12345'
-            sh 'sudo rancher kubectl apply -f k8s-deployment.yaml --namespace=${KUBERNETES_NAMESPACE}'
-            sh 'sudo rancher kubectl rollout restart deployment/${KUBERNETES_DEPLOYMENT_NAME} --namespace=${KUBERNETES_NAMESPACE}'
+             sh "kubectl rollout restart deploy ${KUBERNETES_DEPLOYMENT_NAME} -n ${KUBERNETES_NAMESPACE} --v=9"
         }
       }
     }
-    // stage('Deploy to Kubernetes') {
-    //   steps {
-    //     script {
-    //       withKubeConfig(
-    //         credentialsId: 'gke-creds',
-    //         clusterName: 'cluster-swe',
-    //         zone: 'us-central1-c',
-    //         project: 'swe-645-assignment2'
-    //       ) {
-    //         //                         def timestamp = new Date().format('yyyyMM')
-    //         //                         sh "kubectl set image deployment/${KUBERNETES_DEPLOYMENT_NAME} ${KUBERNETES_CONTAINER_NAME}=${DOCKER_REGISTRY}/bidhanjanit/swe-assignment2:${timestamp} -n ${KUBERNETES_NAMESPACE} --v=9"
-    //         //                         sh "kubectl rollout restart deploy ${KUBERNETES_DEPLOYMENT_NAME} -n ${KUBERNETES_NAMESPACE} --v=9"
-    //       }
-    //     }
-    //   }
-    // }
   }
 }
