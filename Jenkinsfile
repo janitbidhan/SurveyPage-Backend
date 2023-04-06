@@ -41,7 +41,7 @@ pipeline {
                         def timestamp = new Date().format('yyyyMM')
                         sh 'sudo docker build -t "bidhanjanit/swe-assignment2" .' 
 //                         def image = docker.build("bidhanjanit/swe-assignment2:${timestamp}", '.')
-                        sh 'sudo docker push'
+                        sh 'sudo docker push bidhanjanit/swe-assignment2'
 //                         image.push()
                     }
                 }
