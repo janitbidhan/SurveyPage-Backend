@@ -39,7 +39,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh 'echo ${PASSWORD} | sudo docker login -u ${USERNAME} --password-stdin'
                         def timestamp = new Date().format('yyyyMM')
-                        sh 'sudo docker build bidhanjanit/swe-assignment2 .'
+                        sh 'sudo docker build -t "bidhanjanit/swe-assignment2" .' 
 //                         def image = docker.build("bidhanjanit/swe-assignment2:${timestamp}", '.')
                         sh 'sudo docker push'
 //                         image.push()
