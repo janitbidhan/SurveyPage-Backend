@@ -14,13 +14,14 @@ Deploy to Kubernetes: This stage deploys the application to a Kubernetes cluster
 
 The pipeline uses the following environment variables:
 
-DOCKER_REGISTRY: The Docker registry used to store the Docker image.
-DOCKER_CREDENTIALS: The credentials used to authenticate to the Docker registry.
-KUBERNETES_NAMESPACE: The Kubernetes namespace used to deploy the application.
-KUBERNETES_DEPLOYMENT_NAME: The name of the Kubernetes deployment used to deploy the application.
-KUBERNETES_CONTAINER_NAME: The name of the Kubernetes container used to run the application.
-KUBERNETES_CONTAINER_PORT: The port used by the Kubernetes container to expose the application.
-The pipeline has been tested and deployed successfully in a production environment for the SWE 645 course.
+- DOCKER_REGISTRY: The Docker registry used to store the Docker image.
+- DOCKER_CREDENTIALS: The credentials used to authenticate to the Docker registry.
+- KUBERNETES_NAMESPACE: The Kubernetes namespace used to deploy the application.
+- KUBERNETES_DEPLOYMENT_NAME: The name of the Kubernetes deployment used to deploy the application.
+- KUBERNETES_CONTAINER_NAME: The name of the Kubernetes container used to run the application.
+- KUBERNETES_CONTAINER_PORT: The port used by the Kubernetes container to expose the application.
+
+The pipeline has been tested and deployed successfully for the SWE 645 course. Any changes in the repo, triggers a jenkins build which replaces the docker image with the new build and deploys on docker.
 
 >[Access it here on LoadBalancer ](https://18.209.26.76/k8s/clusters/c-ff5k8/api/v1/namespaces/swe-a2/services/http:deploy-a2:8080/proxy/)
 >
