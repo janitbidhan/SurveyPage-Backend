@@ -23,7 +23,7 @@ The pipeline uses the following environment variables:
 
 The pipeline has been tested and deployed successfully for the SWE 645 course. Any changes in the repo, triggers a jenkins build which replaces the docker image with the new build and deploys on docker.
 
->[Access it here on LoadBalancer ](https://18.209.26.76/k8s/clusters/c-ff5k8/api/v1/namespaces/swe-a2/services/http:deploy-a2:8080/proxy/)
+>[Access it here on LoadBalancer ](http://35.202.219.90:8080/)
 >
 >[JENKINS](http://107.23.40.143:8080/)
 >
