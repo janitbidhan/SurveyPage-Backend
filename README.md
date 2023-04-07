@@ -1,7 +1,5 @@
 # SWE 645 Assignment 2: Survey Page Pipeline CI/CD
-
-## Team
-
+##Team
 > Name: Janit Bidhan, Badri Nath Gaur
 > 
 > G Number:G01326011, G01330366
@@ -12,6 +10,8 @@
 These are better explained in the document in detail:
 - Overview
 - Tasks (Explained in document)
+- Contributions
+- Challenges 
 - Pre-requisites for the assignment:
 - Technology Utilised
 - Jenkins Pipline Explanation
@@ -28,13 +28,39 @@ When changes are made to the code in the GitHub repository, the pipeline automat
 
 >Also there is a video link at the end and the video in the folder itself.
 ##Tasks
-- Part 1: Store Survey Page on Github, Dockerize the application using Docker and dockerhub
+- Part 1: Store Survey Page on Github, Dockerize the application using Docker and dockerhub.
 - Part 2: Create EC2 instances using AWS lab for Jenkins and Rancher
 - Part 3: Setup Google Cloud Platfrom for GKE
 - Part 4: Setup up Rancher to manage and create Kubernetes cluster on GKE.
 - Part 5: Manage CI CD using Jenkins, Docker Hub
 
-##Pre-requisites for the assignment:
+# Contributions
+> Badri Nath Gaur: 
+> >Dockerized the application to containerize it, which enabled easy deployment and management on Kubernetes.
+Set up Rancher on EC2, providing a user-friendly interface to manage Kubernetes services.
+Configured the Kubernetes deployment, including defining the number of replicas, resource allocation, and networking settings.
+> 
+> Janit Bidhan: 
+> >Managed Rancher on EC2, ensuring smooth operation of Kubernetes services.
+Installed Jenkins and configured it to automate build and deployment processes.
+Set up the pipeline in Jenkins, defining stages and steps such as compiling code, building the Docker image, pushing to the container registry, and updating the Kubernetes deployment.
+>  
+>  Common Tasks:
+> >Collaborated to determine the best approach for containerizing and deploying the application on Kubernetes.
+Determined the optimal configuration for the Kubernetes deployment, including resource allocation, networking, and scaling policies.
+Set up access controls and permissions for the Rancher and Jenkins instances to ensure secure access and prevent unauthorized changes.
+Monitored the performance and health of the Kubernetes deployment and made adjustments as needed to optimize efficiency and maintain stability.
+Troubleshot any issues that arose during the deployment and worked together to resolve them quickly to minimize downtime.
+Conducted testing and quality assurance to ensure that the application was functioning as expected and meeting performance requirements. 
+
+## Challenges
+>Troubleshooting issues with the Kubernetes deployment, especially when dealing with containerization and networking
+> 
+> Setting up and configuring access controls and permissions for Rancher and Jenkins
+> 
+> Making Rancher and Jenkins work together to perform Continues deployment.
+>  
+## Pre-requisites for the assignment:
 1. IDE for development.
 2. Docker Desktop for building and testing local image.
 3. Access to AWS Learner lab provided by Dr. Vinod Dubey.
@@ -52,7 +78,7 @@ When changes are made to the code in the GitHub repository, the pipeline automat
 8. Rancher 
 
 
-##Jenkins Pipline Explanation
+## Jenkins Pipline Explanation
 
 This pipeline deploys an application using Jenkins, Docker, and Kubernetes. It follows these stages:
 
