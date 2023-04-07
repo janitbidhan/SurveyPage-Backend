@@ -1,17 +1,18 @@
 # SWE 645 Assignment 2: Survey Page Pipeline CI/CD
 ## Team
 > Name: Janit Bidhan, Badri Nath Gaur
-> 
+>
 > G Number:G01326011, G01330366
->  
+>
 > Email: [jbidhan@gmu.edu](jbidhan@gmu.edu), [bgaur@gmu.edu](bgaur@gmu.edu)
 
 ## Contents
 These are better explained in the document in detail:
 - Overview
+- Links
 - Tasks (Explained in document)
 - Contributions
-- Challenges 
+- Challenges
 - Pre-requisites for the assignment:
 - Technology Utilised
 - Jenkins Pipline Explanation
@@ -27,6 +28,18 @@ When changes are made to the code in the GitHub repository, the pipeline automat
 >Note: These are as part of document, location can be seen in the folder Structure i.e. **SWE645-Assignment2.pdf**
 
 >Also there is a video link at the end and the video in the folder itself.
+> 
+## Links
+### Note: Please note that the URLs mentioned below might not work as the AWS Lab (Closes after 4 hours) and GKE clusters were terminated after the demo video was recorded due to their high cost.
+
+>[Access it here on LoadBalancer ](http://35.202.219.90:8080/)
+>
+>[JENKINS](http://107.23.40.143:8080/)
+>
+>[RANCHER](https://18.209.26.76/dashboard/)
+>
+>[Youtube Private Video Link](https://youtu.be/ASzeKtW-gDk)
+>  (Last 2 minutes show the demo of chnages made in github trigger the jenkins job to deploy.)
 ##Tasks
 - Part 1: Store Survey Page on Github, Dockerize the application using Docker and dockerhub.
 - Part 2: Create EC2 instances using AWS lab for Jenkins and Rancher
@@ -35,31 +48,31 @@ When changes are made to the code in the GitHub repository, the pipeline automat
 - Part 5: Manage CI CD using Jenkins, Docker Hub
 
 # Contributions
-> Badri Nath Gaur: 
+> Badri Nath Gaur:
 > >Dockerized the application to containerize it, which enabled easy deployment and management on Kubernetes.
 Set up Rancher on EC2, providing a user-friendly interface to manage Kubernetes services.
 Configured the Kubernetes deployment, including defining the number of replicas, resource allocation, and networking settings.
-> 
-> Janit Bidhan: 
+>
+> Janit Bidhan:
 > >Managed Rancher on EC2, ensuring smooth operation of Kubernetes services.
 Installed Jenkins and configured it to automate build and deployment processes.
 Set up the pipeline in Jenkins, defining stages and steps such as compiling code, building the Docker image, pushing to the container registry, and updating the Kubernetes deployment.
->  
+>
 >  Common Tasks:
 > >Collaborated to determine the best approach for containerizing and deploying the application on Kubernetes.
 Determined the optimal configuration for the Kubernetes deployment, including resource allocation, networking, and scaling policies.
 Set up access controls and permissions for the Rancher and Jenkins instances to ensure secure access and prevent unauthorized changes.
 Monitored the performance and health of the Kubernetes deployment and made adjustments as needed to optimize efficiency and maintain stability.
 Troubleshot any issues that arose during the deployment and worked together to resolve them quickly to minimize downtime.
-Conducted testing and quality assurance to ensure that the application was functioning as expected and meeting performance requirements. 
+Conducted testing and quality assurance to ensure that the application was functioning as expected and meeting performance requirements.
 
 ## Challenges
 >Troubleshooting issues with the Kubernetes deployment, especially when dealing with containerization and networking
-> 
+>
 > Setting up and configuring access controls and permissions for Rancher and Jenkins
-> 
+>
 > Making Rancher and Jenkins work together to perform continuous deployment.
->  
+>
 >  Video editing: We faced challenges in syncing each individual video into a collective entity.
 
 ## Pre-requisites for the assignment:
@@ -77,7 +90,7 @@ Conducted testing and quality assurance to ensure that the application was funct
 5. Google Cloud Platform (GKE)
 6. Jenkins
 7. Kubernetes
-8. Rancher 
+8. Rancher
 
 
 ## Jenkins Pipline Explanation
