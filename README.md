@@ -58,8 +58,10 @@ Conducted testing and quality assurance to ensure that the application was funct
 > 
 > Setting up and configuring access controls and permissions for Rancher and Jenkins
 > 
-> Making Rancher and Jenkins work together to perform Continues deployment.
+> Making Rancher and Jenkins work together to perform continuous deployment.
 >  
+>  Video editing: We faced challenges in syncing each individual video into a collective entity.
+
 ## Pre-requisites for the assignment:
 1. IDE for development.
 2. Docker Desktop for building and testing local image.
