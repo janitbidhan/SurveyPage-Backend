@@ -20,7 +20,7 @@ clusters:
 users:
 - name: "cluster-swe"
   user:
-    token: "kubeconfig-user-wjpffz4sfk:dhnswgtq8n6v6b2vb7kmdxwgxxlh9jlfv24f7zm9684nnrl4qqsfbs"
+    token: "kubeconfig-user-wjpffhdn8g:v6nbs672fh46lp6t4hqbt4zncg22nbl9ltvcpttvx6xqp22h8wpdcq"
 
 
 contexts:
