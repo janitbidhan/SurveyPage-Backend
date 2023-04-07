@@ -1,5 +1,5 @@
 # SWE 645 Survey Page Pipeline Deployment
-
+  
 This pipeline deploys an application using Jenkins, Docker, and Kubernetes. It follows these stages:
 
 __Prerequisites__: This stage sets up the necessary credentials and environment variables needed for the deployment.
