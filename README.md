@@ -1,5 +1,57 @@
-# SWE 645 Survey Page Pipeline Deployment
-  
+# SWE 645 Assignment 2: Survey Page Pipeline CI/CD
+##Team
+> Name: Janit Bidhan, Badri Nath Gaur
+> 
+> G Number:G01326011, G01330366
+>  
+> Email: [jbidhan@gmu.edu](jbidhan@gmu.edu), [bgaur@gmu.edu](bgaur@gmu.edu)
+
+## Contents
+These are better explained in the document in detail:
+- Overview
+- Tasks (Explained in document)
+- Pre-requisites for the assignment:
+- Technology Utilised
+- Jenkins Pipline Explanation
+- Folder Structure
+
+## Overview
+For this assignment, our objective is to deploy a containerized application on Kubernetes to enhance its scalability and resilience. Our baseline configuration involves running at least three pods continuously.
+
+To manage the Kubernetes services on GKE in the Google Cloud Platform, we utilize Rancher. Additionally, we have established a CI/CD pipeline that involves a Git source code repository on GitHub and Jenkins for automated build and deployment of the application on Kubernetes.
+
+When changes are made to the code in the GitHub repository, the pipeline automatically triggers a build and deployment process to ensure that the latest version of the application is always available on Kubernetes.
+
+>Note: These are as part of document, location can be seen in the folder Structure i.e. **SWE645-Assignment2.pdf**
+
+>Also there is a video link at the end and the video in the folder itself.
+##Tasks
+- Part 1: Store Survey Page on Github, Dockerize the application using Docker and dockerhub
+- Part 2: Create EC2 instances using AWS lab for Jenkins and Rancher
+- Part 3: Setup Google Cloud Platfrom for GKE
+- Part 4: Setup up Rancher to manage and create Kubernetes cluster on GKE.
+- Part 5: Manage CI CD using Jenkins, Docker Hub
+
+##Pre-requisites for the assignment:
+1. IDE for development.
+2. Docker Desktop for building and testing local image.
+3. Access to AWS Learner lab provided by Dr. Vinod Dubey.
+4. Personal accounts on GitHub, Google Cloud Platform and Docker Hub.
+
+
+## Technology Utilised
+1. Github
+2. IntelliJ IDE
+3. Docker Desktop and Docker Hub
+4. AWS EC2, AWS Elastic IP
+5. Google Cloud Platform (GKE)
+6. Jenkins
+7. Kubernetes
+8. Rancher 
+
+
+##Jenkins Pipline Explanation
+
 This pipeline deploys an application using Jenkins, Docker, and Kubernetes. It follows these stages:
 
 __Prerequisites__: This stage sets up the necessary credentials and environment variables needed for the deployment.
@@ -28,3 +80,56 @@ The pipeline has been tested and deployed successfully for the SWE 645 course. A
 >[JENKINS](http://107.23.40.143:8080/)
 >
 >[RANCHER](https://18.209.26.76/dashboard/)
+>
+>[Youtube Private Video Link](https://youtu.be/ASzeKtW-gDk)
+>  (Last 2 minutes show the demo of chnages made in github trigger the jenkins job to deploy.)
+
+## Folder Structure
+```
+.
+├── AWS
+│   ├── Default Admin.yaml
+│   ├── cluster-swe.yaml
+│   ├── deploy-a2.yaml
+│   ├── swe-645-assignment2-a57bb1b4da9c.json
+│   ├── swe-645.pem
+│   └── swe645-janit.pem
+├── CI:CD Pipeline Demo and Setup.mp4
+├── SWE645-Assignment2.pdf
+├── SurveyPage-HW2
+│   ├── Dockerfile
+│   ├── Jenkinsfile
+│   ├── META-INF
+│   │   └── MANIFEST.MF
+│   ├── README.md
+│   ├── ROOT.war
+│   ├── RancherYAMLFiles
+│   │   ├── Cluster.yaml
+│   │   └── Deployment.yaml
+│   ├── pom.xml
+│   └── src
+│       ├── main
+│       │   ├── java
+│       │   ├── resources
+│       │   └── webapp
+│       │       ├── WEB-INF
+│       │       │   └── web.xml
+│       │       ├── assets
+│       │       │   ├── css
+│       │       │   │   └── styleSurvey.css
+│       │       │   ├── img
+│       │       │   │   ├── 404-error.png
+│       │       │   │   ├── form-icon.jpg
+│       │       │   │   └── imgThankYou.jpeg
+│       │       │   └── js
+│       │       │       └── main.js
+│       │       ├── error
+│       │       │   └── error.html
+│       │       └── index.html
+│       └── test
+│           └── java
+└── readme.md
+
+18 directories, 25 files
+```
+
