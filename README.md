@@ -40,7 +40,8 @@ When changes are made to the code in the GitHub repository, the pipeline automat
 >
 >[Youtube Private Video Link](https://youtu.be/ASzeKtW-gDk)
 >  (Last 2 minutes show the demo of chnages made in github trigger the jenkins job to deploy.)
-##Tasks
+
+## Tasks
 - Part 1: Store Survey Page on Github, Dockerize the application using Docker and dockerhub.
 - Part 2: Create EC2 instances using AWS lab for Jenkins and Rancher
 - Part 3: Setup Google Cloud Platfrom for GKE
