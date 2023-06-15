@@ -1,11 +1,4 @@
-# SWE 645 Assignment 2: Survey Page Pipeline CI/CD
-## Team
-> Name: Janit Bidhan, Badri Nath Gaur
->
-> G Number:G01326011, G01330366
->
-> Email: [jbidhan@gmu.edu](jbidhan@gmu.edu), [bgaur@gmu.edu](bgaur@gmu.edu)
-
+# Survey Page Pipeline CI/CD
 ## Contents
 These are better explained in the document in detail:
 - Overview
